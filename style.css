@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    box-sizing: border-box;
+}
+
+.cabecalho {
+    margin-top: 4%;
+    margin-left: 4%;
+}
+
+.cabecalho_link {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: cadetblue;
+}
+
+h1 {
+
+}

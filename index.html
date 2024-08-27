@@ -5,28 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Text Decoder</title>
     <link rel="stylesheet" href="style.css">
+    <script src="app.js" defer></script>
 </head>
 <body>
-    <header class="cabecalho">
-        <img src="assets/logo-alura.jpeg" alt="Logo da Alura">
-        <nav>
-            <a class="cabecalho_link" href="about.html">About the Text Decoder</a>
-        </nav>
-    </header>
-
-    <main class="insercao-texto">
-        <h1 class="titulo">Digite o texto que deseja criptografar</h1>
-        <div class="criptografia">
-            <input class="texto-digitado" type="texto-digitado">
+    <div>
+        <header class="cabecalho">
+            <nav>
+                <a class="cabecalho__titulo">DECODIFICADOR DE TEXTO</a>
+            </nav>
+        </header>
+    </div>
+    <main class="conteudo">
+        <div class="conteudo__criptografia">
+            <input class="texto" type="text" id="texto" placeholder="Digite o texto aqui...">
             <div class="botoes">
-                <p class="aviso">Por favor, digite sem letras maiúsculas e sem acentos</p>
-                <button class="botao">Criptografar</button>
-                <button class="botao">Descriptografar</button>
+                <p class="aviso">DIGITAR SEM LETRAS MAIUSCULAS OU ACENTOS</p>
+                <button id="texto-crip" class="botao">CRIPTOGRAFAR</button>
+                <button id="texto-descrip" class="botao">DESCRIPTOGRAFAR</button>
             </div>
-            
+            <input class="texto" type="text" readonly id="resultado" placeholder="Resultado aparecerá aqui...">
+            <p id="erro" class="aviso"></p> <!-- Adiciona uma área para mensagens de erro -->
         </div>
-        
-        <p>Here is the new text</p>
     </main>
 </body>
-</html> 
+</html>

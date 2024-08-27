@@ -1,4 +1,5 @@
-// Função para verificar caracteres inválidos
+// Aqui eu verifico se existe algum caracter que não pode ser usado. Se for o caso, ele
+// informa ao usuário e não realiza a criptografia
 function verificarTexto(texto) {
     const temMaiuscula = /[A-Z]/.test(texto);
     const temAcento = /[áéíóúãõâêîôûàèìòù]/.test(texto);
@@ -16,7 +17,7 @@ function verificarTexto(texto) {
     return null;
 }
 
-// Função para criptografar o texto
+// Função que criptografa o texto
 function criptografar(texto) {
     return texto
         .replace(/e/g, 'enter')
@@ -36,13 +37,14 @@ function descriptografar(texto) {
         .replace(/ufat/g, 'u');
 }
 
-// Função para lidar com o botão de criptografia
+// Função chamada quando clico no botão pra criptografar ou descriptografar.
+// Ele recebe esse "operacao" como parâmetro, que é a informação de qual botão que chamou
 function processarTexto(operacao) {
     const textoInput = document.getElementById('texto').value;
     const resultadoOutput = document.getElementById('resultado');
     const erroOutput = document.getElementById('erro');
 
-    // Verifica se o texto contém caracteres inválidos
+    // Chama a função de verificação dos caracters
     const erro = verificarTexto(textoInput);
     if (erro) {
         resultadoOutput.value = '';
@@ -50,7 +52,7 @@ function processarTexto(operacao) {
         return;
     }
 
-    // Limpa mensagem de erro
+    // Limpa a mensagem de erro
     erroOutput.textContent = '';
 
     if (operacao === 'criptografar') {
@@ -60,6 +62,6 @@ function processarTexto(operacao) {
     }
 }
 
-// Adiciona o evento ao botão para processar o texto
+// Aqui é adicionado o evento que faz todo o processamento do texto quando eu clico no botão
 document.getElementById('texto-crip').addEventListener('click', () => processarTexto('criptografar'));
 document.getElementById('texto-descrip').addEventListener('click', () => processarTexto('descriptografar'));
